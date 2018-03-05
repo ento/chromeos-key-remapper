@@ -1,0 +1,27 @@
+{
+  "name": "US keyboard x emacs",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "US keyboard with emacs-like cursor movement",
+  "background": {
+    "scripts": [
+      "preamble.js",
+      "engine.js",
+      "keymap.js",
+      "main.js"
+    ]
+  },
+  "permissions": [
+      "input", "tabs"
+  ],
+  "input_components": [
+    {
+      "name": "US x emacs",
+      "type": "ime",
+      "id": "io.github.ento.cros_key_remapper",
+      "description": "US keyboard with emacs-like cursor movement",
+      "language": "en-US",
+      "layouts": ["us"]
+    }
+  ]
+}

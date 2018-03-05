@@ -1,2 +1,10 @@
 *~
-
+/build/
+/config.ini
+/imes/*
+!/imes/remapper
+.lock*
+/node_modules/
+/waf
+/waf-*
+.waf*
