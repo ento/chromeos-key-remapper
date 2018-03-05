@@ -18,28 +18,28 @@ This repo contains:
 
 For the premade IME:
 
-- `git` command and knowledge
-- Chrome OS needs to have access to the file system where you do stuff with the above
 - You don't want to remap when you're in crosh window
 
 Additionally, for the make-your-own route:
 
 - python (I use 3.x; 2.x _probably_ works)
 - [`waf` command](https://waf.io/book/#_download_and_installation)
-  (`waf*` is gitignored in this repo; I have it downloaded to the root of my local clone)
+  - `waf*` is gitignored in this repo; I have it downloaded to the root of my local clone
 - [`jscodeshift` command](https://github.com/facebook/jscodeshift)
-
+  - `npm install` in this repo and add `./node_module/.bin` to `$PATH` when invoking `waf`
+  - or: `npm install -g jscodeshift`
 
 ## How to install
 
-First, clone the repo.
+First, download this repo as a zip file and unpack it or clone the repo.
+Chrome OS needs to have access to the file system where your local copy resides.
 
 Go to chrome://extensions and enable developer mode.
 
 ### Using the premade IME
 
 In chrome://extensions, click the "Load unpacked extension..." button
-and pick the `remapper` directory in your local clone of the repo.
+and pick the `remapper` directory in your local copy of the repo.
 
 Open Settings, then search for "manage input methods." Click the highlighted row
 with that label. There should be a row named "US x emacs"; check to enable it.
