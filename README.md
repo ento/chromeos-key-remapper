@@ -26,6 +26,7 @@ Additionally, for the make-your-own route:
 - python (I use 3.x; 2.x _probably_ works)
 - [`waf` command](https://waf.io/book/#_download_and_installation)
   (`waf*` is gitignored in this repo; I have it downloaded to the root of my local clone)
+- [`jscodeshift` command](https://github.com/facebook/jscodeshift)
 
 
 ## How to install
