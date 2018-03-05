@@ -97,8 +97,8 @@ class jscodeshift(Task.Task):
 
 class manifest(Task.Task):
     '''
-    Builds up a manifest JSON by collecting background scripts and permissions
-    from inputs and writes and reading the name, description, language, and layout
+    Builds a manifest JSON by collecting background scripts and permissions
+    from input files and reading the name, description, language, and layout
     from `self.env`.
     '''
 
