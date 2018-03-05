@@ -12,6 +12,7 @@ This repo contains:
   can happen.
 - The options page of the custom IME can only display the options page of a
   single IME.
+- Keys can be only remapped to other key combinations.
 
 ## Prerequisites / assumptions
 
