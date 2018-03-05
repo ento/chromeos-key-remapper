@@ -1,11 +1,3 @@
-[skk]
-name = SKK x emacs
-description = SKK with emacs-like cursor movement
-language = ja
-layout = us
-fallback_imes = skk
-options_page = skk/options.html
-
 [us_emacs]
 name = US x emacs
 description = US keyboard with emacs-like cursor movement
