@@ -12,7 +12,9 @@ This repo contains:
   can happen.
 - The options page of the custom IME can only display the options page of a
   single IME.
-- Keys can be only remapped to other key combinations.
+- Keys can be only remapped to other key combinations. i.e. can't do things
+  that the OS already supports through exiting key combos.
+- Only a single key combo can be mapped: no support for sequence of keys.
 
 ## Prerequisites / assumptions
 
