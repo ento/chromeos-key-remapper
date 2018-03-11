@@ -2,8 +2,8 @@
 // variable name must match what's referenced in main.js.
 // TODO: better documentation on what values are accepted.
 const keymap = [
-  {'match': 'C-a', 'emit': ['C-Home']}, // cursor: beginning of line
-  {'match': 'C-e', 'emit': ['C-End']}, // cursor: end of line
+  {'match': 'C-a', 'emit': ['Home']}, // cursor: beginning of line
+  {'match': 'C-e', 'emit': ['End']}, // cursor: end of line
   {'match': 'C-f', 'emit': ['ArrowRight']}, // cursor: forward one character
   {'match': 'C-b', 'emit': ['ArrowLeft']}, // cursor: back one character
   {'match': 'C-p', 'emit': ['ArrowUp']}, // cursor: previous line
