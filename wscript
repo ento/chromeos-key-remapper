@@ -104,11 +104,11 @@ class manifest(Task.Task):
 
     def run(self):
         target = self.outputs[0]
-        out = target.parent
+        out_dir = target.parent
         submanifests = OrderedDict([(path, path.read_json()) for path in self.inputs])
 
-        scripts = [path.parent.find_or_declare(script).path_from(out)
-                   for path, submanifest in submanifests.items()
+        scripts = [submanifest_path.parent.find_or_declare(script).path_from(out_dir)
+                   for submanifest_path, submanifest in submanifests.items()
                    for script in submanifest['background']['scripts']]
 
         permissions = [permission
