@@ -78,7 +78,7 @@ Remapper.Engine = function (keymap) {
   }
 
   this.handleKeyEvent = function(engineID, keyData) {
-    if (keyData.type === "keydown") {
+    if (keyData.type === "keydown" || keyData.type === "keyup") {
       if (debug) {
         console.log('handleKeyEvent', keyData.type, keyData.key, keyData.code, keyData);
       }
@@ -96,7 +96,7 @@ Remapper.Engine = function (keymap) {
 
     var handled = false;
 
-    if (keyData.type === "keydown") {
+    if (keyData.type === "keydown" || keyData.type === "keyup") {
       var encodedSequence = keyDataToSequenceString(keyData);
 
       // TODO: convert keymap to an object of {match: decodedSequences} for speed
