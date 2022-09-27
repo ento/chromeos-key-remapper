@@ -1,10 +1,16 @@
 Remapper.Engine = function (keymap) {
   var contextId = -1;
-  var lastFocusedWindowUrl = null;
+  var lastFocusedWindowOrigin = null;
   const debug = false;
 
-  const urlBlacklist = [
-    'chrome-extension://pnhechapfaindjhompbnflcldabbghjo/html/crosh.html'
+  // don't remap if key event is coming from these extensions
+  const originBlacklist = [
+    // regular crosh
+    'chrome-extension://pnhechapfaindjhompbnflcldabbghjo',
+    'chrome-untrusted://crosh',
+    // Crostini's Terminal app
+    'chrome-extension://nkoccljplnhpfnfiajclkommnmllphnl',
+    'chrome-untrusted://terminal'
   ];
 
   const nullKeyData = {
@@ -54,7 +60,7 @@ Remapper.Engine = function (keymap) {
     return keyData;
   }
 
-  // grab the last focused window's URL for blacklisting. note that there will
+  // grab the last focused window's URL's origin for blacklisting. note that there will
   // be a delay due to the API being async.
   this.handleFocus = function(context) {
     contextId = context.contextID;
@@ -63,7 +69,10 @@ Remapper.Engine = function (keymap) {
       windowTypes: ['popup', 'normal', 'panel', 'app', 'devtools']
     }, function(window) {
       if (window && window.tabs.length > 0) {
-        lastFocusedWindowUrl = window.tabs[0].url;
+        lastFocusedWindowOrigin = (new URL(window.tabs[0].url)).origin;
+        if (debug) {
+          console.log('lastFocusedWindowOrigin', lastFocusedWindowOrigin);
+        }
       }
     });
   }
@@ -80,7 +89,7 @@ Remapper.Engine = function (keymap) {
       return false;
     }
 
-    if (lastFocusedWindowUrl && urlBlacklist.indexOf(lastFocusedWindowUrl) !== -1) {
+    if (lastFocusedWindowOrigin && originBlacklist.indexOf(lastFocusedWindowOrigin) !== -1) {
       // don't remap in blacklisted windows
       return false;
     }
