@@ -3,7 +3,8 @@ const Remapper = {};
 // Acts as a middleman that accepts an chrome.input.ime event and
 // feeds it to registered event listeners. First listener to register
 // gets to handle the event first.
-Remapper.EventHandler = function EventHandler() {
+Remapper.EventHandler = function EventHandler(name) {
+  this.name = name
   this.listeners = []
 };
 
@@ -13,6 +14,7 @@ Remapper.EventHandler.prototype.addListener = function(fn) {
 
 Remapper.EventHandler.prototype.handleEvent = function() {
   let handled = false;
+  console.log('>', this.name, arguments);
   for (let listener of this.listeners) {
     handled = listener.apply(null, arguments);
     if (handled) break;
@@ -40,7 +42,7 @@ Remapper.events = [
 Remapper.hijack = {};
 
 Remapper.events.forEach(function(event) {
-  const handler = new Remapper.EventHandler()
+  const handler = new Remapper.EventHandler(event)
   Remapper.hijack[event] = handler;
   // The entire plot hinges on this `addListener` call not being
   // picked up by hijack.js, because this extension is just another

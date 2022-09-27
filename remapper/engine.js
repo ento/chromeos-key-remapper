@@ -80,7 +80,7 @@ Remapper.Engine = function (keymap) {
   this.handleKeyEvent = function(engineID, keyData) {
     if (keyData.type === "keydown") {
       if (debug) {
-        console.log(keyData.type, keyData.key, keyData.code, keyData);
+        console.log('handleKeyEvent', keyData.type, keyData.key, keyData.code, keyData);
       }
     }
 
@@ -114,6 +114,9 @@ Remapper.Engine = function (keymap) {
       }
     }
 
+    if (debug) {
+      console.log('onKeyEvent handled by remapper', handled);
+    }
     return handled;
   }
 }
