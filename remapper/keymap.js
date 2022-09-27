@@ -13,6 +13,7 @@ const keymap = [
   {'match': 'C-d', 'emit': ['Delete']}, // cursor: delete one char
   {'match': 'M-a', 'emit': ['C-KeyA']}, // C-a replacement: for select all
   {'match': 'M-b', 'emit': ['C-KeyB']}, // C-b replacement: for boldening text on paper
+  {'match': 'M-f', 'emit': ['C-KeyF']}, // C-f replacement: for searching in page
   {'match': 'M-n', 'emit': ['C-KeyN']}, // C-n replacement: for opening a new window
   {'match': 'M-k', 'emit': ['C-KeyK']} // C-k replacement: for Slack channel switcher
 ];
