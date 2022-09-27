@@ -20,7 +20,7 @@ required_configs = [
 
 
 def configure(ctx):
-    ctx.find_program('jscodeshift')
+    ctx.find_program('node')
 
 
 def build(ctx):
