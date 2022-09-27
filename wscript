@@ -1,3 +1,4 @@
+# -*- mode: python -*-
 import configparser
 from collections import OrderedDict
 
