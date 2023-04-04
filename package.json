@@ -4,7 +4,7 @@
   "description": "",
   "main": "background.js",
   "dependencies": {
-    "jscodeshift": "^0.4.1"
+    "jscodeshift": "^0.14.0"
   },
   "devDependencies": {},
   "scripts": {
