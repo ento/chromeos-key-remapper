@@ -6,10 +6,16 @@ This repo contains:
    keys with a US English keyboard. `C-a` and `C-k`, to name a few.
 2. Tooling to build a custom IME that combines the remapper engine and other 3rd party IMEs.
 
+The extension uses Manifest V3: the background scripts run in a single
+service worker, loaded via `importScripts`.
+
 ## Limitations
 
 - All the combined IMEs share the same JavaScript scope. Name collision
   can happen.
+- Background scripts of all the combined IMEs run inside a Manifest V3
+  service worker. Fallback IMEs whose background scripts rely on DOM
+  APIs (`window`, `document`, etc.) won't work.
 - The options page of the custom IME can only display the options page of a
   single IME.
 - Keys can be only remapped to other key combinations. i.e. can't do things

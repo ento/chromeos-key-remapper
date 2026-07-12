@@ -1,18 +1,13 @@
 {
   "name": "US keyboard x emacs",
   "version": "1.0",
-  "manifest_version": 2,
+  "manifest_version": 3,
   "description": "US keyboard with emacs-like cursor movement",
   "background": {
-    "scripts": [
-      "preamble.js",
-      "engine.js",
-      "keymap.js",
-      "main.js"
-    ]
+    "service_worker": "background.js"
   },
   "permissions": [
-      "input", "tabs"
+      "input", "tabs", "storage"
   ],
   "input_components": [
     {
